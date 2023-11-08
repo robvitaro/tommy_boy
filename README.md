@@ -1,24 +1,84 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Basic design
 
-Things you may want to cover:
+- `Companies` have_many:
+  - `Users` (who use the app)
+  - `Customers`
+  - `Services`
+  - `Products`
+  - `InventoryItems`
+  - `Quotes`
+  - `Invoices`
+  - `Payments`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Details
+- `Company`
+  - name
+  - address_street
+  - address_city
+  - address_state
+  - address_zip
+  - billing_address_street
+  - billing_address_city
+  - billing_address_state
+  - billing_address_zip
+  - contact_first_name
+  - contact_last_name
+  - phone
+  - email
+  - website
+- `Customer`
+  - name
+  - type: residential, commercial
+  - address_street
+  - address_city
+  - address_state
+  - address_zip
+  - billing_address_street
+  - billing_address_city
+  - billing_address_state
+  - billing_address_zip
+  - contact_first_name
+  - contact_last_name
+  - phone
+  - email
+  - notes
+- `Service`
+  - name
+  - description
+  - price
+- `Product`
+  - name
+  - description
+  - price
+- `InventoryItem`
+  - name
+  - description
+  - price
+  - quantity
+- `Quote`
+  - customer_id
+  - date
+  - expected_start_date
+  - notes
+- `QuoteItem`
+  - quoted_id
+  - quoted_type (`Product` or `Service` or `InventoryItem`)
+  - quantity
+- `Invoice`
+  - customer_id
+  - date
+  - work_start_date
+  - work_end_date
+  - payment_due_date
+  - notes
+  - paid_in_full
+- `InvoiceItem`
+  - invoiced_id
+  - invoiced_type (`Product` or `Service` or `InventoryItem`)
+  - quantity
+- `Payment`
+  - customer_id
+  - invoice_id
+  - amount
