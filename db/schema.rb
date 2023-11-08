@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_08_191126) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_08_211404) do
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.integer "category"
+    t.string "address_street"
+    t.string "address_city"
+    t.string "address_state"
+    t.string "address_zip"
+    t.string "billing_address_street"
+    t.string "billing_address_city"
+    t.string "billing_address_state"
+    t.string "billing_address_zip"
+    t.string "contact_first_name"
+    t.string "contact_last_name"
+    t.string "phone"
+    t.string "email"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
