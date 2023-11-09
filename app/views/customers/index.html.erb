@@ -1,14 +1,26 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Customers</h1>
-
-<div id="customers">
-  <% @customers.each do |customer| %>
-    <%= render customer %>
-    <p>
-      <%= link_to "Show this customer", customer %>
-    </p>
-  <% end %>
+<div class="d-flex justify-content-between">
+  <div>
+    <h1>Customers</h1>
+  </div>
+  <div>
+    <%= link_to "New customer", new_customer_path, class: 'btn btn-primary' %>
+  </div>
 </div>
 
-<%= link_to "New customer", new_customer_path %>
+
+<div id="customers">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td><%= link_to customer.name, customer %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

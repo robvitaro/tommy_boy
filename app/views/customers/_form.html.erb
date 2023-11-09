@@ -1,7 +1,7 @@
 <%= form_with(model: customer) do |form| %>
   <% if customer.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+    <div class="alert alert-danger" role="alert">
+      <h4><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h4>
 
       <ul>
         <% customer.errors.each do |error| %>
@@ -11,82 +11,83 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-floating mb-3">
+    <%= form.text_field :name, class: "form-control", placeholder: 'name' %>
+    <%= form.label :name %>
+
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.number_field :category, class: "form-control", placeholder: 'category'  %>
+    <%= form.label :category %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :address_street, class: "form-control", placeholder: 'address_street'  %>
+    <%= form.label :address_street %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :address_city, class: "form-control", placeholder: 'address_city'  %>
+    <%= form.label :address_city %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :address_state, class: "form-control", placeholder: 'address_state'  %>
+    <%= form.label :address_state %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :address_zip, class: "form-control", placeholder: 'address_zip'  %>
+    <%= form.label :address_zip %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :billing_address_street, class: "form-control", placeholder: 'billing_address_street'  %>
+    <%= form.label :billing_address_street %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :billing_address_city, class: "form-control", placeholder: 'billing_address_city'  %>
+    <%= form.label :billing_address_city %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :billing_address_state, class: "form-control", placeholder: 'billing_address_state'  %>
+    <%= form.label :billing_address_state %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :billing_address_zip, class: "form-control", placeholder: 'billing_address_zip'  %>
+    <%= form.label :billing_address_zip %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :contact_first_name, class: "form-control", placeholder: 'contact_first_name'  %>
+    <%= form.label :contact_first_name %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :contact_last_name, class: "form-control", placeholder: 'contact_last_name'  %>
+    <%= form.label :contact_last_name %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :phone, class: "form-control", placeholder: 'phone'  %>
+    <%= form.label :phone %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :email, class: "form-control", placeholder: 'email'  %>
+    <%= form.label :email %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_area :notes, class: "form-control", placeholder: 'notes'  %>
+    <%= form.label :notes %>
   </div>
 
   <div>
-    <%= form.label :category, style: "display: block" %>
-    <%= form.number_field :category %>
-  </div>
-
-  <div>
-    <%= form.label :address_street, style: "display: block" %>
-    <%= form.text_field :address_street %>
-  </div>
-
-  <div>
-    <%= form.label :address_city, style: "display: block" %>
-    <%= form.text_field :address_city %>
-  </div>
-
-  <div>
-    <%= form.label :address_state, style: "display: block" %>
-    <%= form.text_field :address_state %>
-  </div>
-
-  <div>
-    <%= form.label :address_zip, style: "display: block" %>
-    <%= form.text_field :address_zip %>
-  </div>
-
-  <div>
-    <%= form.label :billing_address_street, style: "display: block" %>
-    <%= form.text_field :billing_address_street %>
-  </div>
-
-  <div>
-    <%= form.label :billing_address_city, style: "display: block" %>
-    <%= form.text_field :billing_address_city %>
-  </div>
-
-  <div>
-    <%= form.label :billing_address_state, style: "display: block" %>
-    <%= form.text_field :billing_address_state %>
-  </div>
-
-  <div>
-    <%= form.label :billing_address_zip, style: "display: block" %>
-    <%= form.text_field :billing_address_zip %>
-  </div>
-
-  <div>
-    <%= form.label :contact_first_name, style: "display: block" %>
-    <%= form.text_field :contact_first_name %>
-  </div>
-
-  <div>
-    <%= form.label :contact_last_name, style: "display: block" %>
-    <%= form.text_field :contact_last_name %>
-  </div>
-
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div>
-    <%= form.label :notes, style: "display: block" %>
-    <%= form.text_area :notes %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary mt-2' %>
   </div>
 <% end %>
