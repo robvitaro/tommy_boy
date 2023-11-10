@@ -44,24 +44,29 @@
   - phone
   - email
   - notes
+  - company
 - `Service`
   - name
   - description
   - price
+  - company
 - `Product`
   - name
   - description
   - price
+  - company
 - `InventoryItem`
   - name
   - description
   - price
   - quantity
+  - company
 - `Quote`
   - customer_id
   - date
   - expected_start_date
   - notes
+  - company
 - `QuoteItem`
   - quoted_id
   - quoted_type (`Product` or `Service` or `InventoryItem`)
@@ -74,6 +79,7 @@
   - payment_due_date
   - notes
   - paid_in_full
+  - company
 - `InvoiceItem`
   - invoiced_id
   - invoiced_type (`Product` or `Service` or `InventoryItem`)
@@ -82,3 +88,4 @@
   - customer_id
   - invoice_id
   - amount
+  - company
