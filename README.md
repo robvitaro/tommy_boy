@@ -89,3 +89,7 @@
   - invoice_id
   - amount
   - company
+
+TODO
+----
+- Update new user experience: can't do anything until you make your company, then everything opens up
