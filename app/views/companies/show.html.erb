@@ -1,0 +1,7 @@
+<%= render @company %>
+
+<div>
+  <%= link_to "Edit this company", edit_company_path(@company), class: 'btn btn-primary me-2' %>
+  <%= link_to "Back to companies", companies_path, class: 'btn btn-secondary'%>
+  <%= button_to "Destroy this company", @company, method: :delete, class: 'btn btn-danger mt-2', form: {data: {turbo_confirm: 'Are you sure?'}} %>
+</div>

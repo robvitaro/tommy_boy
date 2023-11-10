@@ -1,0 +1,82 @@
+<%= form_with(model: company) do |form| %>
+  <% if company.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h4><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h4>
+
+      <ul>
+        <% company.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :name, class: "form-control", placeholder: "name" %>
+    <%= form.label :name %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :address_street, class: "form-control", placeholder: "address_street" %>
+    <%= form.label :address_street %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :address_city, class: "form-control", placeholder: "address_city" %>
+    <%= form.label :address_city %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :address_state, class: "form-control", placeholder: "address_state" %>
+    <%= form.label :address_state %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :address_zip, class: "form-control", placeholder: "address_zip" %>
+    <%= form.label :address_zip %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :billing_address_street, class: "form-control", placeholder: "billing_address_street" %>
+    <%= form.label :billing_address_street %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :billing_address_city, class: "form-control", placeholder: "billing_address_city" %>
+    <%= form.label :billing_address_city %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :billing_address_state, class: "form-control", placeholder: "billing_address_state" %>
+    <%= form.label :billing_address_state %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :billing_address_zip, class: "form-control", placeholder: "billing_address_zip" %>
+    <%= form.label :billing_address_zip %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :contact_first_name, class: "form-control", placeholder: "contact_first_name" %>
+    <%= form.label :contact_first_name %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :contact_last_name, class: "form-control", placeholder: "contact_last_name" %>
+    <%= form.label :contact_last_name %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :phone, class: "form-control", placeholder: "phone" %>
+    <%= form.label :phone %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :email, class: "form-control", placeholder: "email" %>
+    <%= form.label :email %>
+  </div>
+
+  <div>
+    <%= form.submit class: 'btn btn-primary mt-2' %>
+  </div>
+<% end %>
