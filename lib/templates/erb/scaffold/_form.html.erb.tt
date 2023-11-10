@@ -1,7 +1,7 @@
 <%%= form_with(model: <%= model_resource_name %>) do |form| %>
   <%% if <%= singular_table_name %>.errors.any? %>
     <div class="alert alert-danger" role="alert">
-      <h4><%%= pluralize(<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
+      <h4><%%= pluralize(<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h4>
 
       <ul>
         <%% <%= singular_table_name %>.errors.each do |error| %>
@@ -25,7 +25,7 @@
     <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, multiple: true, class: "form-control", placeholder: <%= attribute.column_name %> %>
     <%%= form.label :<%= attribute.column_name %> %>
 <% else -%>
-    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class: "form-control", placeholder: <%= attribute.column_name %> %>
+    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class: "form-control", placeholder: "<%= attribute.column_name %>" %>
     <%%= form.label :<%= attribute.column_name %> %>
 <% end -%>
   </div>

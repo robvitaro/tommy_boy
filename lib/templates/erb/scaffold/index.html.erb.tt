@@ -18,7 +18,7 @@
     <tbody>
       <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
         <tr>
-          <td><<%%= link_to "Show this <%= human_name.downcase %>", <%= model_resource_name(singular_table_name) %> %></td>
+          <td><%%= link_to "Show this <%= human_name.downcase %>", <%= model_resource_name(singular_table_name) %> %></td>
         </tr>
       <%% end %>
     </tbody>
