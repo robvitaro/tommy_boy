@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="form-floating mb-3">
-    <%= form.text_field :name, class: "form-control", placeholder: 'name' %>
+    <%= form.text_field :name, class: "form-control", placeholder: 'name', required: true %>
     <%= form.label :name %>
 
   </div>
 
-  <div class="form-floating mb-3">
-    <%= form.number_field :category, class: "form-control", placeholder: 'category'  %>
-    <%= form.label :category %>
+  <div class="input-group mb-3">
+    <%= form.label :category, class: "input-group-text" %>
+    <%= form.select :category, options_for_select(Customer.categories.map{|k,v| [k.humanize, k.to_s] }, @customer.category), {include_blank: 'Please select a category', required: true}, class: "form-select" %>
   </div>
 
   <div class="form-floating mb-3">
