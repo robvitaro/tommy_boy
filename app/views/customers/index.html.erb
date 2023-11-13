@@ -13,12 +13,18 @@
     <thead>
       <tr>
         <th>Name</th>
+        <th>Category</th>
+        <th>City</th>
+        <th>St</th>
       </tr>
     </thead>
     <tbody>
       <% @customers.each do |customer| %>
         <tr>
           <td><%= link_to customer.name, customer %></td>
+          <td><%= customer.category.humanize %></td>
+          <td><%= customer.address_city %></td>
+          <td><%= customer.address_state %></td>
         </tr>
       <% end %>
     </tbody>
