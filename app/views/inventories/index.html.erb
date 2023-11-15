@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-between">
+  <div>
+    <h1>Inventory</h1>
+  </div>
+  <div>
+    <%= link_to "New item", new_inventory_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+
+<div id="inventories">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @inventories.each do |inventory| %>
+        <tr>
+          <td><%= link_to inventory.name, inventory %></td>
+          <td><%= inventory.description %></td>
+          <td><%= inventory.quantity %></td>
+          <td><%= inventory.price %></td>
+        </tr>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

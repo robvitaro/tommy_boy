@@ -1,0 +1,7 @@
+<%= render @inventory %>
+
+<div>
+  <%= link_to "Edit this item", edit_inventory_path(@inventory), class: 'btn btn-primary me-2' %>
+  <%= link_to "Back to inventory", inventories_path, class: 'btn btn-secondary'%>
+  <%= button_to "Destroy this item", @inventory, method: :delete, class: 'btn btn-danger mt-2', form: {data: {turbo_confirm: 'Are you sure?'}} %>
+</div>

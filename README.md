@@ -55,7 +55,7 @@
   - description
   - price
   - company
-- `InventoryItem`
+- `Inventory`
   - name
   - description
   - price

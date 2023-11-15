@@ -1,0 +1,37 @@
+<%= form_with(model: inventory) do |form| %>
+  <% if inventory.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h4><%= pluralize(inventory.errors.count, "error") %> prohibited this inventory from being saved:</h4>
+
+      <ul>
+        <% inventory.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :name, class: "form-control", placeholder: "name" %>
+    <%= form.label :name %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :description, class: "form-control", placeholder: "description" %>
+    <%= form.label :description %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.number_field :price, class: "form-control", placeholder: "price" %>
+    <%= form.label :price %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.number_field :quantity, class: "form-control", placeholder: "quantity" %>
+    <%= form.label :quantity %>
+  </div>
+
+  <div>
+    <%= form.submit "#{form.object.persisted? ? 'Update' : 'Create'}", class: 'btn btn-primary mt-2' %>
+  </div>
+<% end %>
