@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :companies
   resources :customers
   resources :products
+  resources :services
 
   # Defines the root path route ("/")
   root "home#index"

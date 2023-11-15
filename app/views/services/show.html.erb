@@ -1,0 +1,7 @@
+<%= render @service %>
+
+<div>
+  <%= link_to "Edit this service", edit_service_path(@service), class: 'btn btn-primary me-2' %>
+  <%= link_to "Back to services", services_path, class: 'btn btn-secondary'%>
+  <%= button_to "Destroy this service", @service, method: :delete, class: 'btn btn-danger mt-2', form: {data: {turbo_confirm: 'Are you sure?'}} %>
+</div>
